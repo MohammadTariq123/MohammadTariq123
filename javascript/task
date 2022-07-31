@@ -1,0 +1,129 @@
+//question no 1
+
+function reversedNum(num) {
+	return (
+    parseFloat(
+      num
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+    ) * Math.sign(num)
+  )
+}
+
+console.log(reversedNum(32243));
+
+//QUESTION NO 2
+function checkPalindrome(string) {
+    const arrayValues = string.split('');
+    const reverseArrayValues = arrayValues.reverse();
+    const reverseString = reverseArrayValues.join('');
+    if(string == reverseString) {
+        console.log('It is a palindrome');
+    }
+    else {
+        console.log('It is not a palindrome');
+    }
+}
+const string = prompt('Enter a string: ');
+checkPalindrome(string);
+
+//queston no 3
+function combinator (s) {
+    list_of_strings = new Array();
+    for(i=0;i<s.length;i++) {
+        for(j=i+1;j<s.length+1;j++) {
+            list_of_strings.push(s.slice(i, j));
+        }
+    }
+    return list_of_strings;
+ }
+ 
+console.log(combinator("dog"));
+
+ question no 4
+
+function alphabet_order(str)
+  {
+return str.split('').sort().join('');
+  }
+console.log(alphabet_order("webmaster"));
+
+question no 5
+
+function titleCase(str) {
+   var splitStr = str.toLowerCase().split(' ');
+   for (var i = 0; i < splitStr.length; i++) {
+       // You do not need to check if i is larger than splitStr length, as your for does that for you
+       // Assign it back to the array
+       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+   }
+   // Directly return the joined string
+   return splitStr.join(' '); 
+}
+
+document.write(titleCase("the quick brwon fox"));
+
+question no 6
+
+function longer(champ, contender) {
+  return (contender.length > champ.length) ? contender : champ;
+}
+
+function longestWord(str) {
+  var words = str.split(' ');
+  return words.reduce(longer);
+}
+
+console.log(longestWord("Web development tutorial"));
+
+question no 7
+
+const countVowels = str => Array.from(str)
+  .filter(letter => 'aeiou'.includes(letter)).length;
+
+
+console.log(countVowels('the quick brown fox')); 
+
+
+question no 8
+
+function isPrime(num) { 
+    if (num <= 1) return false; 
+    if (num % 2 == 0 && num > 2) return false; 
+    const s = Math.sqrt(num);
+    for(let i = 3; i <= s; i += 2) { 
+        if(num % i === 0) return false;
+    }
+    return true;
+  }
+  console.log(isPrime(11));
+  
+  question no 9
+  
+  function detect_data_type(value)
+{
+var dtypes = [Function, RegExp, Number, String, Boolean, Object], x, len;
+
+if (typeof value === "object" || typeof value === "function")
+{
+for (x = 0, len = dtypes.length; x < len; x++)
+{
+if (value instanceof dtypes[x])
+{
+return dtypes[x];
+}
+}
+}
+
+return typeof value;
+}
+console.log(detect_data_type(12));
+console.log(detect_data_type('w3resource'));
+console.log(detect_data_type(false))
+
+question no 10
+
+
+
